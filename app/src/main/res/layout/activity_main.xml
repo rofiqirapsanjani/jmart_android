@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <com.google.android.material.tabs.TabLayout
+      android:id="@+id/mainTabLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="2dp"
+      android:background="#467AE1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:tabIndicatorColor="#F1ECEC"
+      app:tabTextColor="#FBFBFB">
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/ti_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRODUCTS" />
+
+    <com.google.android.material.tabs.TabItem
+        android:id="@+id/ti_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FILTER" />
+
+  </com.google.android.material.tabs.TabLayout>
+  <!--Product CardView-->
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cv_product"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:visibility="visible"
+      app:cardBackgroundColor="#FFFFFF"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
+      tools:visibility="gone">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <Button
+          android:id="@+id/btnPrev"
+          android:layout_width="80dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:layout_marginEnd="300dp"
+          android:text="Prev"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <Button
+          android:id="@+id/btnNext"
+          android:layout_width="80dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="120dp"
+          android:text="Next"
+          app:layout_constraintBottom_toBottomOf="@+id/btnPrev"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/btnPrev" />
+
+      <Button
+          android:id="@+id/btnGo"
+          android:layout_width="80dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="15dp"
+          android:text="Go"
+          app:layout_constraintBottom_toBottomOf="@+id/et_page"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/et_page" />
+
+      <EditText
+          android:id="@+id/et_page"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="14dp"
+          android:ems="4"
+          android:hint="Page"
+          android:inputType="number"
+          android:minHeight="48dp"
+          app:layout_constraintBottom_toBottomOf="@+id/btnNext"
+          app:layout_constraintEnd_toStartOf="@+id/btnGo"
+          app:layout_constraintTop_toTopOf="@+id/btnNext" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rv_Products"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/btnPrev" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+  <!--Filter CardView-->
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cv_filter"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:visibility="invisible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
+      tools:visibility="visible">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/et_productName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ems="17"
+          android:hint="Product Name"
+          android:inputType="textPersonName"
+          android:minHeight="48dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_productName" />
+
+      <EditText
+          android:id="@+id/et_lowestPrice"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:layout_marginEnd="220dp"
+          android:ems="6"
+          android:inputType="number"
+          android:minHeight="48dp"
+          android:text="0"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_lowestPrice" />
+
+      <EditText
+          android:id="@+id/et_highestPrice"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="220dp"
+          android:ems="6"
+          android:inputType="number"
+          android:minHeight="48dp"
+          android:text="50000"
+          app:layout_constraintBottom_toBottomOf="@+id/et_lowestPrice"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/et_lowestPrice" />
+
+      <TextView
+          android:id="@+id/tv_productName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="310dp"
+          android:text="Name"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/tv_to"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="to"
+          app:layout_constraintBottom_toBottomOf="@+id/et_lowestPrice"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_highestPrice" />
+
+      <TextView
+          android:id="@+id/tv_lowestPrice"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="260dp"
+          android:text="Lowest Price"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/et_productName" />
+
+      <TextView
+          android:id="@+id/tv_productCondition"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="250dp"
+          android:text="Product Condition"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/et_lowestPrice" />
+
+      <TextView
+          android:id="@+id/tv_productCategory"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="40dp"
+          android:layout_marginEnd="250dp"
+          android:text="Product Category"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/tv_productCondition" />
+
+      <TextView
+          android:id="@+id/tv_highestPrice"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="180dp"
+          android:text="Highest Price"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_lowestPrice"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_lowestPrice" />
+
+      <CheckBox
+          android:id="@+id/cb_new"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="30dp"
+          android:checked="false"
+
+          android:text="New"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_productCondition"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/tv_productCondition"
+          app:layout_constraintTop_toTopOf="@+id/tv_productCondition" />
+
+      <CheckBox
+          android:id="@+id/cb_used"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="170dp"
+          android:text="Used"
+
+          app:layout_constraintBottom_toBottomOf="@+id/cb_new"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/tv_productCondition"
+          app:layout_constraintTop_toTopOf="@+id/cb_new" />
+
+      <Button
+          android:id="@+id/btnApply"
+          android:layout_width="120dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="60dp"
+          android:layout_marginBottom="32dp"
+          android:text="Apply"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+      <Button
+          android:id="@+id/btnClear"
+          android:layout_width="120dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="55dp"
+          android:layout_marginEnd="60dp"
+          android:text="Clear"
+          app:layout_constraintBottom_toBottomOf="@+id/btnApply"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/btnApply"
+          app:layout_constraintTop_toTopOf="@+id/btnApply" />
+
+      <Spinner
+          android:id="@+id/spinner_filterCategory"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="30dp"
+          android:entries="@array/productCategory"
+          android:gravity="end"
+          android:minHeight="12dp"
+          android:spinnerMode="dropdown"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_productCategory"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_productCategory" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

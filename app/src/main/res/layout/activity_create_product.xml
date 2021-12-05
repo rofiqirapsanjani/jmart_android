@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateProductActivity">
+
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView"
+      android:layout_width="350dp"
+      android:layout_height="500dp"
+      android:layout_marginTop="20dp"
+      app:cardBackgroundColor="#F3EFEF"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreateProductActivity">
+
+      <TextView
+          android:id="@+id/tv_accountDetail2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="20dp"
+          android:layout_marginTop="20dp"
+          android:text="Create Product"
+          android:textSize="18sp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <EditText
+          android:id="@+id/et_createProductName"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="-5dp"
+          android:layout_marginTop="25dp"
+          android:ems="17"
+          android:hint="Name"
+          android:inputType="textPersonName"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/tv_accountDetail2"
+          app:layout_constraintTop_toBottomOf="@+id/tv_accountDetail2"
+          tools:ignore="TouchTargetSizeCheck" />
+
+      <EditText
+          android:id="@+id/et_createProductWeight"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:ems="17"
+          android:hint="Weight"
+          android:inputType="numberDecimal"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/et_createProductName"
+          app:layout_constraintTop_toBottomOf="@+id/et_createProductName"
+          tools:ignore="TouchTargetSizeCheck" />
+
+      <EditText
+          android:id="@+id/et_createProductPrice"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:ems="17"
+          android:hint="Price"
+          android:inputType="numberDecimal"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/et_createProductWeight"
+          app:layout_constraintTop_toBottomOf="@+id/et_createProductWeight"
+          tools:ignore="TouchTargetSizeCheck" />
+
+      <EditText
+          android:id="@+id/et_createProductDiscount"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:ems="17"
+          android:hint="Discount"
+          android:inputType="numberDecimal"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/et_createProductPrice"
+          app:layout_constraintTop_toBottomOf="@+id/et_createProductPrice"
+          tools:ignore="TouchTargetSizeCheck" />
+
+      <TextView
+          android:id="@+id/tv_createProductCondition"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:text="Condition"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/et_createProductDiscount"
+          app:layout_constraintTop_toBottomOf="@+id/et_createProductDiscount" />
+
+      <TextView
+          android:id="@+id/tv_createProductCategory"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="25dp"
+          android:text="Category"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/tv_createProductCondition"
+          app:layout_constraintTop_toBottomOf="@+id/tv_createProductCondition" />
+
+      <TextView
+          android:id="@+id/tv_createProductShipmentPlan"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:text="Shipment Plan"
+          android:textSize="16sp"
+          app:layout_constraintStart_toStartOf="@+id/tv_createProductCategory"
+          app:layout_constraintTop_toBottomOf="@+id/tv_createProductCategory" />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="170dp"
+          android:layout_height="60dp"
+          android:layout_marginEnd="10dp"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_createProductCondition"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_createProductCondition">
+
+        <RadioGroup
+            android:id="@+id/radio_conditionList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+          <RadioButton
+              android:id="@+id/radio_conditionNew"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:buttonTint="#AF2C2C"
+              android:checked="true"
+              android:text="New"
+              android:textSize="15sp"
+              android:typeface="normal" />
+
+          <RadioButton
+              android:id="@+id/radio_conditionUsed"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:buttonTint="#AF2C2C"
+              android:text="Used"
+              android:textSize="15sp"
+              android:typeface="normal" />
+
+        </RadioGroup>
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <Spinner
+          android:id="@+id/spinner_createCategory"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="10dp"
+          android:dropDownWidth="wrap_content"
+          android:entries="@array/productCategory"
+          android:gravity="end"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_createProductCategory"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@+id/tv_createProductCategory"
+          tools:ignore="TouchTargetSizeCheck" />
+
+      <Spinner
+          android:id="@+id/spinner_createShipment"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:dropDownWidth="wrap_content"
+          android:entries="@array/shipmentPlans"
+          android:gravity="end"
+          app:layout_constraintBottom_toBottomOf="@+id/tv_createProductShipmentPlan"
+          app:layout_constraintEnd_toEndOf="@+id/spinner_createCategory"
+          app:layout_constraintTop_toTopOf="@+id/tv_createProductShipmentPlan"
+          tools:ignore="TouchTargetSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </androidx.cardview.widget.CardView>
+
+  <Button
+      android:id="@+id/btnCreateProduct"
+      android:layout_width="150dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginBottom="20dp"
+      android:text="Create"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <Button
+      android:id="@+id/btnCancelProduct"
+      android:layout_width="150dp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:text="Cancel"
+      app:layout_constraintBottom_toBottomOf="@+id/btnCreateProduct"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/btnCreateProduct" />
+</androidx.constraintlayout.widget.ConstraintLayout>
