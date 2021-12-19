@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="280dp">
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceShipmentAddressT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:maxEms="18"
+        android:text="TextView"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceShipmentAddressLabelT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceShipmentAddressLabelT"
+        tools:text="Jl. Jalan Bogor Depok Jakarta Jalan Nama Jalan yang panjang Sekali" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceNameT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="18dp"
+        android:maxEms="8"
+        android:text="SampleInvoiceName"
+        android:textColor="#1E1C1C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/rv_image_productInvoiceT"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sample" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceStatusT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="10dp"
+        android:maxEms="11"
+        android:text="WAITING_CONFIRMATION"
+        android:textColor="#FF9800"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceShipmentAddressT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceShipmentAddressT" />
+
+    <TextView
+        android:id="@+id/rv_tv_fillerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="60dp"
+        android:maxEms="12"
+        android:text="Waiting for seller's confirmation of your purchase"
+        android:textAlignment="center"
+        android:textColor="#FF9800"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceShipmentAddressT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceShipmentAddressT" />
+
+    <ImageView
+        android:id="@+id/rv_image_productInvoiceT"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="12dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/art_craft"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/rv_btnCancelTransactionT"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="Cancel"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/rv_btnFinishTransactionT"
+        android:layout_width="75dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="8dp"
+        android:text="FINISH"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="10sp"
+        android:visibility="visible"
+        app:backgroundTint="#FF1654"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/rv_btnComplaintTransactionT"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:text="COMPLAINT"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="8sp"
+        android:visibility="visible"
+
+        app:backgroundTint="#FF1654"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_btnFinishTransactionT"
+        app:layout_constraintEnd_toStartOf="@+id/rv_btnFinishTransactionT"
+        app:layout_constraintTop_toTopOf="@+id/rv_btnFinishTransactionT"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceAmountT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textColor="#555151"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_tv_invoiceStore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_tv_invoiceStore" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceTotalPriceT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SampleInvoiceTotal"
+        android:textColor="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_tv_invoiceShipmentPlanT"
+        app:layout_constraintEnd_toEndOf="@+id/rv_tv_invoiceAmountT"
+        app:layout_constraintTop_toTopOf="@+id/rv_tv_invoiceShipmentPlanT" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceShipmentAddressLabelT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Shipment Address:"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceShipmentPlanT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceShipmentPlanT" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceShipmentPlanT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        android:textColor="#FFC107"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceNameT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceStore" />
+
+    <TextView
+        android:id="@+id/rv_tv_invoiceStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SampleStore"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceNameT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceNameT" />
+
+    <TextView
+        android:id="@+id/rv_tv_productIdT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Product ID: X"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rv_tv_invoiceNameT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rv_tv_invoiceNameT" />
+
+    <Spinner
+        android:id="@+id/spinner_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="end"
+        android:minHeight="12dp"
+        android:spinnerMode="dropdown"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/rv_tv_invoiceTotalPriceT"
+        app:layout_constraintTop_toBottomOf="@+id/rv_tv_invoiceShipmentAddressT" />
+
+    <EditText
+        android:id="@+id/rv_et_complaint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="20"
+        android:hint="Complaint.."
+        android:inputType="textPersonName"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/rv_tv_invoiceShipmentAddressT"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_rating" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginTop="2dp"
-      android:background="#467AE1"
+      android:background="#FF1654"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.0"
       app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +56,7 @@
           android:layout_marginTop="20dp"
           android:layout_marginEnd="300dp"
           android:text="Prev"
+          app:backgroundTint="#FF1654"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
@@ -66,6 +67,7 @@
           android:layout_height="wrap_content"
           android:layout_marginStart="120dp"
           android:text="Next"
+          app:backgroundTint="#FF1654"
           app:layout_constraintBottom_toBottomOf="@+id/btnPrev"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="@+id/btnPrev" />
@@ -76,6 +78,7 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="15dp"
           android:text="Go"
+          app:backgroundTint="#FF1654"
           app:layout_constraintBottom_toBottomOf="@+id/et_page"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toTopOf="@+id/et_page" />
@@ -259,6 +262,7 @@
           android:layout_marginStart="60dp"
           android:layout_marginBottom="32dp"
           android:text="Apply"
+          app:backgroundTint="#FF1654"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintStart_toStartOf="parent" />
 
@@ -269,6 +273,7 @@
           android:layout_marginStart="55dp"
           android:layout_marginEnd="60dp"
           android:text="Clear"
+          app:backgroundTint="#FF1654"
           app:layout_constraintBottom_toBottomOf="@+id/btnApply"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/btnApply"

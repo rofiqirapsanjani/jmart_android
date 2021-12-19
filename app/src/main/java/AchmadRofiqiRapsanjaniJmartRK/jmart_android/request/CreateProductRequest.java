@@ -13,7 +13,7 @@ public class CreateProductRequest extends StringRequest {
     public CreateProductRequest(String accountId, String name, String weight, String conditionUsed, String price,
                                 String  discount, String category, String shipmentPlans,
                                 Response.Listener<String> listener, Response.ErrorListener errorListener){
-        super(Method.POST, "http://10.0.2.2:5000/product/create", listener, errorListener);
+        super(Method.POST, "http://10.0.2.2:8080/product/create", listener, errorListener);
         params = new HashMap<>();
         params.put("accountId", accountId);
         params.put("name", name);

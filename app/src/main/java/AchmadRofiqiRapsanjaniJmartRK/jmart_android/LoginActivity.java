@@ -1,4 +1,10 @@
 package AchmadRofiqiRapsanjaniJmartRK.jmart_android;
+/**
+ * Class LoginActivity - write a description of the class here
+ *
+ * @author Achmad Rofiqi Rapsanjani
+ * @version
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -45,8 +51,6 @@ public class LoginActivity extends AppCompatActivity{
         btnLogin = findViewById(R.id.btnLogin);
         tv_registerNow = findViewById(R.id.tv_registerNow);
 
-        etEmail.setText("samuelnathaniel@gmail.com");
-        etPassword.setText("Samuel123456");
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -60,18 +64,18 @@ public class LoginActivity extends AppCompatActivity{
                     public void onResponse(String response) {
                         try {
                             loggedAccount = gson.fromJson(response, Account.class);
-                            Toast.makeText(getApplicationContext(), "Login successful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Login berhasil", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                         } catch (Exception e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Login unsuccessful, error occured", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Login gagal, error terjadi", Toast.LENGTH_LONG).show();
                         }
                     }
                 }, new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "Error occured.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Error terjadi.", Toast.LENGTH_LONG).show();
                     }
                 });
                 queue.add(loginRequest);

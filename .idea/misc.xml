@@ -3,12 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_about_me.xml" value="0.2" />
-        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_create_product.xml" value="0.16" />
-        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_main.xml" value="0.16" />
-        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_register.xml" value="0.11474164133738601" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/drawable/button_design.xml" value="0.1" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_about_me.xml" value="0.22" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_create_product.xml" value="0.25" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_invoice.xml" value="0.22" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_payment.xml" value="0.22" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_product_detail.xml" value="0.22" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_register.xml" value="0.21" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/activity_searchable.xml" value="0.18" />
         <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/recyclerview_row.xml" value="0.2359375" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/recyclerview_row2.xml" value="0.25" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/recyclerview_rowtransactions.xml" value="0.25" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/layout/recylerview_row2.xml" value="0.1" />
+        <entry key="..\:/Users/vicky/Desktop/jmart_android/app/src/main/res/menu/menu_main.xml" value="0.22" />
       </map>
     </option>
   </component>

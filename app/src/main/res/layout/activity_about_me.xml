@@ -9,8 +9,8 @@
 
   <androidx.cardview.widget.CardView
       android:layout_width="350dp"
-      android:layout_height="580dp"
-      android:layout_marginTop="15dp"
+      android:layout_height="585dp"
+      android:layout_marginTop="10dp"
       app:cardBackgroundColor="#FFFFFF"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="20dp"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="18dp"
           android:text="Account Details"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +45,7 @@
           android:id="@+id/tv_email"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="25dp"
           android:text="Email"
           app:layout_constraintEnd_toEndOf="@+id/tv_name"
           app:layout_constraintStart_toStartOf="@+id/tv_name"
@@ -56,7 +56,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="15dp"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="25dp"
           android:text="Balance"
           app:layout_constraintEnd_toEndOf="@+id/tv_email"
           app:layout_constraintStart_toStartOf="@+id/tv_email"
@@ -90,7 +90,7 @@
           android:layout_height="wrap_content"
           android:layout_marginEnd="20dp"
           android:text="TextView"
-          android:textColor="#000000"
+          android:textColor="#7EEA76"
           app:layout_constraintBottom_toBottomOf="@+id/tv_balance"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toTopOf="@+id/tv_balance" />
@@ -99,7 +99,7 @@
           android:id="@+id/et_topUpAmount"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="20dp"
+          android:layout_marginTop="24dp"
           android:ems="7"
           android:hint="Top Up Amount"
           android:inputType="numberDecimal"
@@ -114,9 +114,9 @@
           android:layout_width="80dp"
           android:layout_height="wrap_content"
           android:layout_marginEnd="20dp"
-          android:backgroundTint="#2A61EA"
           android:text="TOP UP"
           android:textSize="11sp"
+          app:backgroundTint="#FF1654"
           app:layout_constraintBottom_toBottomOf="@+id/et_topUpAmount"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toTopOf="@+id/et_topUpAmount" />
@@ -125,23 +125,40 @@
           android:id="@+id/btnRegisterStore"
           android:layout_width="320dp"
           android:layout_height="48dp"
-          android:layout_marginTop="20dp"
-          android:backgroundTint="#2A61EA"
+          android:layout_marginTop="10dp"
+          android:backgroundTint="#FF1654"
+          app:backgroundTint="#FF1654"
+
           android:text="REGISTER STORE"
           android:textSize="11sp"
+          app:layout_constraintEnd_toEndOf="@+id/btnInvoiceHistory"
+          app:layout_constraintStart_toStartOf="@+id/btnInvoiceHistory"
+          app:layout_constraintTop_toBottomOf="@+id/btnInvoiceHistory" />
+
+      <Button
+          android:id="@+id/btnInvoiceHistory"
+          android:layout_width="320dp"
+          android:layout_height="44dp"
+          android:layout_marginTop="13dp"
+          android:letterSpacing="0.07"
+          android:text="Invoices"
+          android:textSize="12sp"
+          app:backgroundTint="#FF1654"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/et_topUpAmount" />
+          app:layout_constraintTop_toBottomOf="@+id/et_topUpAmount"
+          tools:ignore="TouchTargetSizeCheck" />
 
       <androidx.cardview.widget.CardView
           android:id="@+id/cv_registerStore"
           android:layout_width="324dp"
-          android:layout_height="350dp"
-          android:layout_marginBottom="10dp"
+          android:layout_height="280dp"
+          android:layout_marginTop="5dp"
           android:visibility="invisible"
-          app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent">
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/btnInvoiceHistory"
+          tools:visibility="gone">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -152,7 +169,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginStart="20dp"
-              android:layout_marginTop="20dp"
+              android:layout_marginTop="14dp"
               android:text="Register Store"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent" />
@@ -162,7 +179,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginStart="-10dp"
-              android:layout_marginTop="30dp"
+              android:layout_marginTop="10dp"
               android:ems="18"
               android:hint="Name"
               android:inputType="textPersonName"
@@ -175,7 +192,7 @@
               android:id="@+id/et_storeAddress"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginTop="15dp"
+              android:layout_marginTop="10dp"
               android:ems="18"
               android:hint="Address"
               android:inputType="textPersonName"
@@ -189,7 +206,7 @@
               android:id="@+id/et_storePhoneNumber"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:layout_marginTop="15dp"
+              android:layout_marginTop="10dp"
               android:ems="18"
               android:hint="Phone Number"
               android:inputType="textPersonName"
@@ -203,9 +220,10 @@
               android:id="@+id/btnRegisterStoreConfirm"
               android:layout_width="130dp"
               android:layout_height="48dp"
-              android:layout_marginTop="30dp"
-              android:backgroundTint="#FF5722"
+              android:layout_marginTop="14dp"
+              android:backgroundTint="#FF1654"
               android:text="REGISTER"
+              app:backgroundTint="#FF1654"
               android:textSize="12sp"
               app:layout_constraintStart_toStartOf="@+id/et_storePhoneNumber"
               app:layout_constraintTop_toBottomOf="@+id/et_storePhoneNumber" />
@@ -214,8 +232,9 @@
               android:id="@+id/btnRegisterStoreCancel"
               android:layout_width="130dp"
               android:layout_height="48dp"
-              android:backgroundTint="#FF5722"
+              android:backgroundTint="#FF1654"
               android:text="CANCEL"
+              app:backgroundTint="#FF1654"
               android:textSize="12sp"
               app:layout_constraintBottom_toBottomOf="@+id/btnRegisterStoreConfirm"
               app:layout_constraintEnd_toEndOf="@+id/et_storePhoneNumber"
@@ -227,12 +246,13 @@
       <androidx.cardview.widget.CardView
           android:id="@+id/cv_storeExists"
           android:layout_width="324dp"
-          android:layout_height="300dp"
-          android:layout_marginBottom="40dp"
+          android:layout_height="270dp"
+          android:layout_marginTop="7dp"
           android:visibility="invisible"
-          app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent">
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/btnInvoiceHistory"
+          tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

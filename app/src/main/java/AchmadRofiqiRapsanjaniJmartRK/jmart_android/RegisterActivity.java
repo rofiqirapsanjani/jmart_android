@@ -1,6 +1,11 @@
 package AchmadRofiqiRapsanjaniJmartRK.jmart_android;
 
-
+/**
+ * Class RegisterActivity - write a description of the class here
+ *
+ * @author Achmad Rofiqi Rapsanjani
+ * @version
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -53,22 +58,22 @@ public class RegisterActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObj = new JSONObject(response);
                             if (jsonObj != null){
-                                Toast.makeText(getApplicationContext(), "Register successful", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Register berhasil", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(intent);
                             }
                             else{
-                                Toast.makeText(getApplicationContext(), "Register unsuccessful, jsonObj null", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Register tidak berhasil", Toast.LENGTH_LONG).show();
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Register unsuccessful, error occured", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Register tidak berhasil, error terjadi", Toast.LENGTH_LONG).show();
                         }
                     }
                 }, new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "Register unsuccessful, error occured", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Register tidak berhasil, error terjadi", Toast.LENGTH_LONG).show();
                     }
                 });
                 queue.add(registerRequest);

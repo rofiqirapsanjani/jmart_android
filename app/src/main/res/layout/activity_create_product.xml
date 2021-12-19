@@ -195,6 +195,7 @@
       android:layout_marginStart="30dp"
       android:layout_marginBottom="20dp"
       android:text="Create"
+      app:backgroundTint="#FF1654"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintStart_toStartOf="parent" />
 
@@ -204,6 +205,7 @@
       android:layout_height="wrap_content"
       android:layout_marginEnd="30dp"
       android:text="Cancel"
+      app:backgroundTint="#FF1654"
       app:layout_constraintBottom_toBottomOf="@+id/btnCreateProduct"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="@+id/btnCreateProduct" />

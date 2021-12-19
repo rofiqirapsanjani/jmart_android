@@ -1,4 +1,10 @@
 package AchmadRofiqiRapsanjaniJmartRK.jmart_android;
+/**
+ * Class CreateProductActivity - write a description of the class here
+ *
+ * @author Achmad Rofiqi Rapsanjani
+ * @version
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +39,6 @@ public class CreateProductActivity extends AppCompatActivity {
         et_createProductDiscount = findViewById(R.id.et_createProductDiscount);
         spinner_createCategory = findViewById(R.id.spinner_createCategory);
         spinner_createShipment = findViewById(R.id.spinner_createShipment);
-        //Handle checking value of checked radiogroup buttons
         radio_conditionList = findViewById(R.id.radio_conditionList);
         radio_conditionList.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -107,8 +112,7 @@ public class CreateProductActivity extends AppCompatActivity {
         btnCancelProduct = findViewById(R.id.btnCancelProduct);
         btnCancelProduct.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public void onClick(View v) { finish();
             }
         });
     }

@@ -1,6 +1,11 @@
 package AchmadRofiqiRapsanjaniJmartRK.jmart_android;
 
-
+/**
+ * Class MainActivity - write a description of the class here
+ *
+ * @author Achmad Rofiqi Rapsanjani
+ * @version
+ */
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,6 +51,8 @@ import java.util.List;
 import AchmadRofiqiRapsanjaniJmartRK.jmart_android.model.Product;
 
 public class MainActivity extends AppCompatActivity implements MyRecyclerViewAdapter.ItemClickListener {
+    public static final String EXTRA_PRODUCTID = "AchmadRofiqiRapsanjaniJmartRK.jmart_android.EXTRA_PRODUCTID";
+    public static final String EXTRA_SEARCH = "AchmadRofiqiRapsanjaniJmartRK.jmart_android.EXTRA_SEARCH";
     private static final Gson gson = new Gson();
     MyRecyclerViewAdapter adapter;
     private TabLayout mainTabLayout;
@@ -104,25 +111,25 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
             public void onTabReselected(TabLayout.Tab tab) { } //Reselect Tab unused.
         });
         //Request to Fetch Product Lists
-        List<Product> productNames = new ArrayList<>();                     //ArrayList to store products
-        page = 0;                                                           //Default page = 0
-        fetchProduct(productNames, page, queue, false);         //Method to fetch GET request products
+        List<Product> productNames = new ArrayList<>();
+        page = 0;
+        fetchProduct(productNames, page, queue, false);
         RecyclerView recyclerView = findViewById(R.id.rv_Products);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyRecyclerViewAdapter(this, productNames);     //Using custom MyRecyclerViewAdapter
+        adapter = new MyRecyclerViewAdapter(this, productNames);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL)); //Add divider to each row
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         btnPrev = findViewById(R.id.btnPrev);
         btnNext = findViewById(R.id.btnNext);
         btnGo   = findViewById(R.id.btnGo);
         et_page = findViewById(R.id.et_page);
-        btnPrev.setOnClickListener(new View.OnClickListener() {             //Handle pagination buttons
+        btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(page > 0){
                     page--;
-                    fetchProduct(productNames, page, queue, true);  //Update the list with paginated products
+                    fetchProduct(productNames, page, queue, true);
                 }
             }
         });
@@ -163,7 +170,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
                 String lowestPrice= et_lowestPrice.getText().toString();
                 String highestPrice = et_highestPrice.getText().toString();
                 String category = spinner_filterCategory.getSelectedItem().toString();
-                StringRequest filterRequest = new StringRequest(Request.Method.GET, "http://10.0.2.2:6969/product/getFiltered?pageSize=10&accountId="+LoginActivity.getLoggedAccount().id+"&search="+productName+"&minPrice="+lowestPrice+"&maxPrice="+highestPrice+"&category="+category, new Response.Listener<String>() {
+                StringRequest filterRequest = new StringRequest(Request.Method.GET, "http://10.0.2.2:8080/product/getFiltered?pageSize=10&accountId="+LoginActivity.getLoggedAccount().id+"&search="+productName+"&minPrice="+lowestPrice+"&maxPrice="+highestPrice+"&category="+category, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         JsonReader reader = new JsonReader(new StringReader(response)); //Use reader to read json response of filtered products
@@ -177,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
                         } catch (Exception e) {
                             e.printStackTrace();
                             Toast.makeText(getApplicationContext(), "Filter product unsuccessful, error occurred", Toast.LENGTH_LONG).show();
-                        }
+                        }  
                         //After filtering, move back to display the product tab (set product visible, set Filter invisible)
                         cv_product.setVisibility(View.VISIBLE);
                         cv_filter.setVisibility(View.INVISIBLE);
@@ -209,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
     }
     //Fetch Products Request Method
     public void fetchProduct(List<Product> productNames, int page, RequestQueue queue, boolean refreshAdapter){
-        StringRequest fetchProductsRequest = new StringRequest(Request.Method.GET, "http://10.0.2.2:5000/product/page?page="+page+"&pageSize=10", new Response.Listener<String>() {
+        StringRequest fetchProductsRequest = new StringRequest(Request.Method.GET, "http://10.0.2.2:8080/product/page?page="+page+"&pageSize=10", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 JsonReader reader = new JsonReader(new StringReader(response));
@@ -238,7 +245,10 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
     //RecycleView Item ClickListener
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(getApplicationContext(), "Testing click product", Toast.LENGTH_LONG).show();
+        int clickedItemId = adapter.getClickedItemId(position);
+        Intent intent = new Intent(getApplicationContext(), ProductDetailActivity.class);
+        intent.putExtra(EXTRA_PRODUCTID, clickedItemId);
+        startActivity(intent);
     }
     //Menu
     @Override
@@ -257,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements MyRecyclerViewAda
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.menu_search:
-//                startActivity(new Intent(this, RegisterActivity.class));
+//               startActivity(new Intent(this, SearchableActivity.class));
                 return true;
             case R.id.menu_add:
                 startActivity(new Intent(this, CreateProductActivity.class));
